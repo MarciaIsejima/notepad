@@ -16,19 +16,17 @@ class Form extends React.Component {
                 <div className="row">
                     <div className="input-field col s3">
                         <input 
-                            name="CurrentTitle"
+                            name="currentTitle"
                             type="text"
                             value={this.props.currentTitle}
-                            onChange={this.props.handleChange}
-                        />
+                            onChange={this.props.handleChange}/>
                     </div>
                     <div className="input-field col s7">
                         <input 
-                            name="CurrentDetails"
+                            name="currentDetails"
                             type="text"
                             value={this.props.currentDetails}
-                            onChange={this.props.handleChange}
-                        />                        
+                            onChange={this.props.handleChange}/>                        
                     </div>
                     <div className="input-field col s2">
                         <button className="btn-large waves-effect waves-light"
