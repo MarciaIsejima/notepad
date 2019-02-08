@@ -4,7 +4,7 @@ const Header = (props) => {
     return(
 
         <div className="navbar-fixed">
-            <nav className="teal lighten-2">
+            <nav className="purple darken-3">
                 <div className="nav-wrapper">
                     <div className="brand-logo center">{props.name}'s Notepad</div>
                 </div>

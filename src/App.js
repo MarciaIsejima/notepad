@@ -5,17 +5,10 @@ import Form from './components/Form';
 import firebase from 'firebase';
 import _ from 'lodash';
 
-const styles = {
-  textAlign: 'center',
-  margin: 0,
-  padding: 0,
-  fontFamily: 'sans-serif',
-}
-
 class App extends React.Component {
 
-  constructor(props){
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
       notes: [],
       name: "Marcia",
@@ -31,7 +24,7 @@ class App extends React.Component {
   componentWillMount() {
 
     // initialize Firebase
-    firebase.initializeApp( {
+    firebase.initializeApp({
       apiKey: "AIzaSyCKVZmQysi_bZUpOdii2OTwPpa3kwBhrHI",
       authDomain: "notepad-583e5.firebaseapp.com",
       databaseURL: "https://notepad-583e5.firebaseio.com",
@@ -53,7 +46,7 @@ class App extends React.Component {
             details: value.details,
           };
         });
-        
+
         //set the state to the 'store' object created
         this.setState({
           notes: store,
@@ -97,23 +90,23 @@ class App extends React.Component {
   };
 
   // deletes a note from the database
-  deleteNote(id){
+  deleteNote(id) {
     firebase.database().ref(`/notes/${id}`)
-    .remove();
-    alert("Successfully deleted!");
+      .remove();
+      alert("Successfully deleted!");
   };
 
   render() {
     return (
-      <div className={styles}>
-        <Header name={this.state.name}/>    
+      <div>
+        <Header name={this.state.name} />
         <Form
           currentTitle={this.state.currentTitle}
           currentDetails={this.state.currentDetails}
           handleChange={this.handleChange.bind(this)}
           handleSubmit={this.handleSubmit.bind(this)}
         />
-        <Grid 
+        <Grid
           notes={this.state.notes}
           deleteNote={this.deleteNote.bind(this)}
         />

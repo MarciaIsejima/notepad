@@ -16,20 +16,24 @@ class Form extends React.Component {
                 <div className="row">
                     <div className="input-field col s3">
                         <input 
+                            id = "title"
                             name="currentTitle"
                             type="text"
                             value={this.props.currentTitle}
                             onChange={this.props.handleChange}/>
+                        <label for="title">Title</label>
                     </div>
                     <div className="input-field col s7">
-                        <input 
+                        <input
+                            id = "description" 
                             name="currentDetails"
                             type="text"
                             value={this.props.currentDetails}
-                            onChange={this.props.handleChange}/>                        
+                            onChange={this.props.handleChange}/>
+                        <label for="description">Description</label>                        
                     </div>
                     <div className="input-field col s2">
-                        <button className="btn-large waves-effect waves-light"
+                        <button className="btn purple darken-3 waves-effect waves-light"
                            type="submit" name="action">Add note</button>
                     </div>
                 </div>
